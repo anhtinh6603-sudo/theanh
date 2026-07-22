@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Editor (thử nghiệm)</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>🎬 Video Editor</h1>
+        <p class="subtitle">Chỉnh sửa video ngay trong trình duyệt — không upload lên server nào cả.</p>
+      </header>
+
+      <nav class="tabs" id="tabs">
+        <button class="tab-btn active" data-tab="trim">Cắt video</button>
+        <button class="tab-btn" data-tab="merge">Ghép video</button>
+        <button class="tab-btn" data-tab="watermark">Chèn text / watermark</button>
+        <button class="tab-btn" data-tab="convert">Đổi định dạng / nén</button>
+      </nav>
+
+      <main class="panels">
+        <!-- TRIM -->
+        <section class="panel active" id="panel-trim">
+          <h2>Cắt video (trim)</h2>
+          <label class="field">
+            <span>Chọn video</span>
+            <input type="file" id="trim-input" accept="video/*" />
+          </label>
+          <video id="trim-preview" class="preview" controls></video>
+          <div class="row">
+            <label class="field small">
+              <span>Bắt đầu (giây)</span>
+              <input type="number" id="trim-start" value="0" min="0" step="0.1" />
+            </label>
+            <label class="field small">
+              <span>Kết thúc (giây)</span>
+              <input type="number" id="trim-end" value="5" min="0" step="0.1" />
+            </label>
+          </div>
+          <button class="run-btn" id="trim-run">Cắt video</button>
+        </section>
+
+        <!-- MERGE -->
+        <section class="panel" id="panel-merge">
+          <h2>Ghép nhiều video</h2>
+          <label class="field">
+            <span>Chọn từ 2 video trở lên (theo đúng thứ tự ghép)</span>
+            <input type="file" id="merge-input" accept="video/*" multiple />
+          </label>
+          <ul id="merge-list" class="file-list"></ul>
+          <button class="run-btn" id="merge-run">Ghép video</button>
+        </section>
+
+        <!-- WATERMARK -->
+        <section class="panel" id="panel-watermark">
+          <h2>Chèn text / watermark</h2>
+          <label class="field">
+            <span>Chọn video</span>
+            <input type="file" id="watermark-input" accept="video/*" />
+          </label>
+          <video id="watermark-preview" class="preview" controls></video>
+          <label class="field">
+            <span>Nội dung chữ</span>
+            <input type="text" id="watermark-text" value="Sample Watermark" />
+          </label>
+          <div class="row">
+            <label class="field small">
+              <span>Vị trí</span>
+              <select id="watermark-position">
+                <option value="bottom-right">Góc dưới phải</option>
+                <option value="bottom-left">Góc dưới trái</option>
+                <option value="top-right">Góc trên phải</option>
+                <option value="top-left">Góc trên trái</option>
+                <option value="center">Chính giữa</option>
+              </select>
+            </label>
+            <label class="field small">
+              <span>Cỡ chữ</span>
+              <input type="number" id="watermark-size" value="24" min="8" max="120" />
+            </label>
+          </div>
+          <button class="run-btn" id="watermark-run">Chèn watermark</button>
+        </section>
+
+        <!-- CONVERT -->
+        <section class="panel" id="panel-convert">
+          <h2>Đổi định dạng / nén video</h2>
+          <label class="field">
+            <span>Chọn video</span>
+            <input type="file" id="convert-input" accept="video/*" />
+          </label>
+          <video id="convert-preview" class="preview" controls></video>
+          <div class="row">
+            <label class="field small">
+              <span>Định dạng đầu ra</span>
+              <select id="convert-format">
+                <option value="mp4">MP4</option>
+                <option value="webm">WebM</option>
+                <option value="gif">GIF</option>
+              </select>
+            </label>
+            <label class="field small">
+              <span>Độ phân giải</span>
+              <select id="convert-resolution">
+                <option value="original">Giữ nguyên</option>
+                <option value="1280:-2">720p</option>
+                <option value="854:-2">480p</option>
+                <option value="640:-2">360p</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Mức nén (CRF, chỉ áp dụng cho mp4/webm — số càng cao càng nén nhiều, chất lượng càng thấp)</span>
+            <input type="range" id="convert-crf" min="18" max="40" value="28" />
+            <output id="convert-crf-value">28</output>
+          </label>
+          <button class="run-btn" id="convert-run">Chuyển đổi</button>
+        </section>
+      </main>
+
+      <section class="status-area">
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <pre id="log" class="log"></pre>
+      </section>
+
+      <section class="output-area" id="output-area" hidden>
+        <h2>Kết quả</h2>
+        <video id="output-preview" class="preview" controls></video>
+        <img id="output-image" class="preview" alt="Kết quả GIF" />
+        <a id="output-download" class="download-btn" download>Tải xuống</a>
+      </section>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
