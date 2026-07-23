@@ -1,0 +1,24 @@
+# Bot 6 - Auto-poster platform config template.
+#
+# IMPORTANT: every social platform's page DOM changes over time and differs by
+# account type/locale/A-B test, so there is no universal set of selectors that
+# will "just work". Fill these in yourself by opening devtools on the actual
+# compose/upload page you use and copying the real selectors. Treat this file
+# as a starting template, not working configuration.
+#
+# Also important: Facebook, Instagram and most platforms' Terms of Service
+# prohibit automating actions in the regular web UI, even on your own account.
+# Automated *posting* against your own Pages should go through the official
+# API instead (Facebook Graph API / Instagram Graph API / TikTok Content
+# Posting API) wherever your account type supports it — that's the
+# ToS-compliant, stable option and doesn't break every time the site's HTML
+# changes. Only use the browser-automation path below for platforms with no
+# accessible API, understanding the ToS and account-suspension risk, and only
+# on your own account that you're already logged into.
+
+my_blog:
+  compose_url: "https://example.com/wp-admin/post-new.php"
+  media_input_selector: "input[type=file]"
+  caption_selector: "textarea#content"
+  publish_button_selector: "#publish"
+  wait_after_publish_ms: 3000

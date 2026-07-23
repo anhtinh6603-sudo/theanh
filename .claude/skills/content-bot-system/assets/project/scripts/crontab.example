@@ -1,0 +1,10 @@
+# Example crontab entries for the content-bot-system pipeline.
+# Install with: crontab -e   (then paste, adjusting the path)
+#
+# Bots 1-5 (scrape -> ideate -> write -> image -> video) every 4 hours:
+0 */4 * * * /path/to/content-bot-system/scripts/run_once.sh >> /path/to/content-bot-system/data/pipeline.log 2>&1
+
+# Bot 6 (auto-poster) checked every 15 minutes; it no-ops outside your
+# configured golden-hour window (PUBLISH_WINDOW_START/END in .env) and
+# publishes at most one post per run when inside it.
+*/15 * * * * cd /path/to/content-bot-system && .venv/bin/python pipeline.py --only 6 >> data/pipeline.log 2>&1
