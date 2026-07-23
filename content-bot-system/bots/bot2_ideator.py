@@ -26,8 +26,13 @@ USED_TOPICS_KEEP = 50
 
 SYSTEM_PROMPT = """Bạn là một content strategist chuyên tìm góc độ (angle) độc lạ, dễ viral \
 từ tin tức/chủ đề đang trending. Với danh sách tin thô được cung cấp, hãy chọn ra những góc \
-độ khác biệt nhau, tránh trùng lặp với các chủ đề đã dùng gần đây. Trả lời CHỈ bằng JSON hợp lệ, \
-không thêm giải thích, đúng theo schema:
+độ khác biệt nhau, tránh trùng lặp với các chủ đề đã dùng gần đây.
+
+QUY TẮC: KHÔNG đề xuất góc độ chứa cam kết/số tiền thu nhập cụ thể (vd "kiếm $3000/tháng",
+"thu nhập X triệu") vì đây là điều không thể đảm bảo và dễ gây hiểu lầm. Góc độ nên tập trung
+vào giá trị thật (giải thích, hướng dẫn, so sánh...), không phải lời hứa hẹn kiếm tiền.
+
+Trả lời CHỈ bằng JSON hợp lệ, không thêm giải thích, đúng theo schema:
 [
   {
     "angle": "góc độ/tiêu đề đề xuất, ngắn gọn, gây tò mò",

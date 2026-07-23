@@ -22,9 +22,21 @@ log = logging.getLogger("bot3_writer")
 
 SYSTEM_PROMPT = """Bạn là copywriter/content writer chuyên viết bài không sáo rỗng, đi thẳng \
 vào giá trị cho người đọc, chuẩn SEO khi cần. Dựa vào góc độ (angle) và hook được cung cấp, \
-hãy viết nội dung hoàn chỉnh. Trả lời CHỈ bằng JSON hợp lệ, đúng schema:
+hãy viết nội dung hoàn chỉnh.
+
+QUY TẮC TRUNG THỰC (bắt buộc tuân thủ):
+- KHÔNG bịa số liệu thống kê (%, nghiên cứu, khảo sát...) nếu không có nguồn thật được cung cấp.
+- KHÔNG bịa case study/nhân vật/testimonial cụ thể (tên người, số tiền kiếm được, kết quả cụ thể)
+  trừ khi được cung cấp sẵn trong dữ liệu đầu vào.
+- KHÔNG đưa ra cam kết/hứa hẹn thu nhập cụ thể (vd "$3000/tháng", "kiếm X triệu") vì đây là điều
+  không thể đảm bảo và có thể gây hiểu lầm cho người đọc.
+- Được phép dùng ví dụ RÕ RÀNG LÀ MINH HOẠ (ghi chú "ví dụ minh hoạ") thay vì nêu như sự thật.
+- Tập trung vào giá trị thật: giải thích khái niệm, hướng dẫn cách làm, mô tả đúng nội dung sản
+  phẩm/nguồn được cung cấp.
+
+Trả lời CHỈ bằng JSON hợp lệ, đúng schema:
 {
-  "title": "tiêu đề chính thức, hấp dẫn, chứa từ khoá chính",
+  "title": "tiêu đề chính thức, hấp dẫn, chứa từ khoá chính, KHÔNG chứa số tiền/cam kết thu nhập cụ thể",
   "meta_description": "mô tả SEO 1-2 câu, dưới 160 ký tự",
   "body_markdown": "toàn bộ nội dung bài viết dạng markdown, có heading, đoạn ngắn, dễ đọc",
   "social_caption": "caption ngắn (dưới 300 ký tự) để đăng kèm ảnh/video lên mạng xã hội",
@@ -75,7 +87,7 @@ def run() -> int:
     written = 0
     for idea in pending:
         try:
-            draft = llm.generate_json(SYSTEM_PROMPT, _draft_prompt(idea), max_tokens=3000)
+            draft = llm.generate_json(SYSTEM_PROMPT, _draft_prompt(idea), max_tokens=8000)
             path = _write_draft_file(idea, draft)
             idea["status"] = "drafted"
             written += 1
