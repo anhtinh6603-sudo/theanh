@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "Ảnh Thành Video",
+    "slug": "anh-thanh-video",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#07060d",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anhtinh.anhthanhvideo",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Cho phép chọn ảnh để tạo video.",
+        "NSCameraUsageDescription": "Cho phép chụp ảnh để tạo video.",
+        "NSPhotoLibraryAddUsageDescription": "Cho phép lưu video đã tạo vào thư viện ảnh."
+      }
+    },
+    "android": {
+      "package": "com.anhtinh.anhthanhvideo",
+      "adaptiveIcon": {
+        "backgroundColor": "#07060d",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Cho phép chọn ảnh để tạo video.",
+          "cameraPermission": "Cho phép chụp ảnh để tạo video."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Cho phép lưu video đã tạo vào thư viện ảnh.",
+          "savePhotosPermission": "Cho phép lưu video đã tạo vào thư viện ảnh.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ]
+    ]
+  }
+}
