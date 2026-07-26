@@ -33,18 +33,18 @@ jobs:
       - name: Generate native Android project
         run: npx expo prebuild --platform android --no-install
 
-      - name: Build debug APK
+      - name: Build release APK
         working-directory: android
-        run: ./gradlew assembleDebug --no-daemon
+        run: ./gradlew assembleRelease --no-daemon
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: anh-thanh-video-debug-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: anh-thanh-video-apk
+          path: android/app/build/outputs/apk/release/app-release.apk
 
       - name: Rename APK for release
-        run: cp android/app/build/outputs/apk/debug/app-debug.apk anh-thanh-video-${{ github.run_number }}.apk
+        run: cp android/app/build/outputs/apk/release/app-release.apk anh-thanh-video-${{ github.run_number }}.apk
 
       - name: Publish release with APK asset
         uses: softprops/action-gh-release@v2

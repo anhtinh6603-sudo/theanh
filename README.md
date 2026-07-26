@@ -20,10 +20,10 @@ Repo này có sẵn GitHub Actions (`.github/workflows/build-android.yml`) tự 
 
 1. Mở repo trên GitHub bằng trình duyệt, vào tab **Actions**.
 2. Chọn lần chạy mới nhất của workflow **Build Android APK** (đợi tới khi có dấu ✅, khoảng 5-10 phút).
-3. Cuộn xuống mục **Artifacts**, tải file `anh-thanh-video-debug-apk` (là file `.zip` chứa `app-debug.apk`).
+3. Cuộn xuống mục **Artifacts**, tải file `anh-thanh-video-apk` (là file `.zip` chứa `app-release.apk`).
 4. Giải nén và mở file `.apk` để cài — nhớ bật "Cho phép cài từ nguồn không xác định" nếu Android hỏi.
 
-Đây là bản debug build (đủ để cài và dùng thử trên máy cá nhân), không cần tài khoản Expo hay máy tính riêng.
+Đây là bản release build, code JS đã được đóng gói sẵn vào file APK nên chạy độc lập — không cần Metro, không cần máy tính, không cần tài khoản Expo.
 
 ## Build ra file APK bằng máy tính (tùy chọn)
 
