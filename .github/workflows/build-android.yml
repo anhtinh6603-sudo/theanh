@@ -6,6 +6,9 @@ on:
       - claude/video-image-generation-mobile-app-fzxokv
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,3 +42,13 @@ jobs:
         with:
           name: anh-thanh-video-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Rename APK for release
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk anh-thanh-video-${{ github.run_number }}.apk
+
+      - name: Publish release with APK asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-build-${{ github.run_number }}
+          name: APK build #${{ github.run_number }}
+          files: anh-thanh-video-${{ github.run_number }}.apk
