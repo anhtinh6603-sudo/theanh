@@ -14,10 +14,19 @@
    ```
 3. Cài ứng dụng **Expo Go** trên điện thoại (App Store / Google Play), rồi quét mã QR hiện trên terminal/trình duyệt để mở app trực tiếp trên máy — không cần build.
 
-Muốn build ra file cài đặt thật (APK/IPA) để dùng offline hoặc đăng lên store, dùng [EAS Build](https://docs.expo.dev/build/introduction/):
+## Build ra file APK cài trực tiếp lên điện thoại
+
+Chạy các lệnh dưới đây **trên máy tính có mạng internet bình thường** (không chạy được trong môi trường build đám mây bị chặn mạng):
+
 ```bash
-npx eas build --platform android
+npm install -g eas-cli
+eas login          # tạo tài khoản Expo miễn phí nếu chưa có
+eas build --platform android --profile preview
 ```
+
+Sau khi build xong (thường 10-15 phút), EAS sẽ đưa ra một đường link tải file `.apk`. Mở link đó **ngay trên trình duyệt điện thoại** (hoặc quét mã QR mà lệnh trên hiển thị) để tải và cài trực tiếp — nhớ bật "Cho phép cài từ nguồn không xác định" nếu Android hỏi. Không cần Expo Go, không cần giữ máy tính chạy sau khi cài xong.
+
+Cấu hình build đã có sẵn trong `eas.json` (profile `preview` build ra `.apk`), bạn chỉ cần chạy lệnh ở trên.
 
 ## Chế độ tạo video
 
