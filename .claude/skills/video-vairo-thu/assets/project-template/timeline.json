@@ -1,0 +1,10 @@
+{
+  "target_duration": 45,
+  "scene_durations": [7, 8, 8, 8, 7, 7],
+  "audio_tracks": [
+    {"file": "audio/01-wife.mp3", "start_ms": 400, "volume": 1.0},
+    {"file": "audio/02-husband.mp3", "start_ms": 7300, "volume": 1.0}
+  ],
+  "bgm": null
+}
+

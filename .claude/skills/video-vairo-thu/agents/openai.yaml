@@ -1,0 +1,8 @@
+interface:
+  display_name: "Video vairo thú"
+  short_description: "Tạo video thú nhân hóa dọc bằng Flow"
+  brand_color: "#F59E0B"
+  default_prompt: "Use $video-vairo-thu to produce a complete vertical anthropomorphic-animal comedy video."
+
+policy:
+  allow_implicit_invocation: true

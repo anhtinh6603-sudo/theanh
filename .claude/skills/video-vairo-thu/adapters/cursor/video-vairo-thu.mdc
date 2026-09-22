@@ -1,0 +1,6 @@
+---
+description: Sản xuất video dọc hài với nhân vật thú nhân hóa bằng Flow, ElevenLabs và FFmpeg
+alwaysApply: false
+---
+
+Khi người dùng gọi “Video vairo thú” hoặc yêu cầu video thú nhân hóa, hãy đọc `../../.agent-skills/video-vairo-thu/SKILL.md` và `../../.agent-skills/video-vairo-thu/PLATFORM-SUPPORT.md`. Ưu tiên script Python trong gói. Không hứa MP4 nếu môi trường thiếu Flow, file nguồn hoặc FFmpeg.

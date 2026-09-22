@@ -1,0 +1,20 @@
+[Script Info]
+Title: {{TITLE}}
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: A,Arial,62,&H00F4D8FF,&H000000FF,&H0015151A,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,85,85,185,1
+Style: B,Arial,62,&H00FFE2A8,&H000000FF,&H0015151A,&H80000000,-1,0,0,0,100,100,0,0,1,5,2,2,85,85,185,1
+Style: SFX,Arial,48,&H00FFFFFF,&H000000FF,&H0015151A,&H80000000,-1,1,0,0,100,100,0,0,1,4,1,2,85,85,175,1
+Style: Title,Arial,72,&H0000D7FF,&H000000FF,&H0015151A,&H80000000,-1,0,0,0,100,100,1,0,1,6,2,8,70,70,130,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.80,Title,,0,0,0,,{{TITLE}}
+Dialogue: 0,0:00:00.40,0:00:01.60,A,,0,0,0,,Điền phụ đề
+
