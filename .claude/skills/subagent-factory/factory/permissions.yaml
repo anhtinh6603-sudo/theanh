@@ -1,4 +1,5 @@
 # Bản đồ quyền - không trao quyền trắng. Agent Tổng chỉ hành động trong phạm vi đã ghi.
+approved: 2026-10-21   # chủ đã duyệt toàn bộ phạm vi dưới đây
 scope:
   project: anhtinh6603-sudo/theanh   # chỉ repo/workspace này; cấm đọc chéo dự án khác
   write_paths: [outputs/, inbox/, content-bot-system/data/, content-bot-system/output/, .claude/]
@@ -14,6 +15,7 @@ tiers:
   tu_dong_co_giam_sat:  # chạy và hiển thị tiến trình; chủ chỉ xem
     - Chạy pipeline nhiều bước, render dài
     - Commit + push lên nhánh phát triển được giao
+    - Tải kết quả lên thư mục Drive bàn giao (delivery trong sources.yaml) - chỉ thư mục đó, không chia sẻ
   xin_duyet:            # PHẢI DỪNG trước bước cuối
     - Đăng bài, gửi tin, bình luận đại diện
     - Xuất bản, chia sẻ dữ liệu, cấp/đổi quyền

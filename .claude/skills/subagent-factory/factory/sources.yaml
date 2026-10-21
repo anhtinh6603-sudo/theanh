@@ -8,7 +8,16 @@ input_lookup_order:
   6: Hỏi đúng phần vẫn còn thiếu
 
 inbox: inbox/        # thả file mới vào đây để Agent Tổng phân loại
-outputs: outputs/    # mỗi job một thư mục outputs/<job_id>/
+outputs: outputs/    # mỗi job một thư mục outputs/<job_id>/ (bản nháp cục bộ)
+
+delivery:            # nơi bàn giao chính thức - chủ duyệt 2026-10-21
+  type: google_drive
+  folder_name: "Subagent - Ban giao"
+  folder_id: 1BGi4CjYIKE2os6pc40nSmC1Yqe83PLo5
+  url: https://drive.google.com/drive/folders/1BGi4CjYIKE2os6pc40nSmC1Yqe83PLo5
+  layout: <folder>/<job_id>/{file kết quả, bao-cao.txt}
+  tool: Google Drive connector (mcp__Google_Drive__create_file) - do Agent Tổng tải lên ở bước 7
+  note: File lớn (video dài) nếu tải qua connector thất bại thì báo chủ, giữ bản ở outputs/<job_id>/
 
 rules:
   - Không dùng tài sản của khách hàng khác.

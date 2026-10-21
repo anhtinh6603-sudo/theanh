@@ -9,6 +9,9 @@ suy luận chưa xác nhận, tài sản không rõ quyền, trạng thái tạm
 - 2026-10-21 - Ngôn ngữ làm việc: tiếng Việt.
 - 2026-10-21 - Dự án: `theanh` gồm app edit video trên trình duyệt (ffmpeg.wasm) và `content-bot-system/` (pipeline 6 bot).
 
+- 2026-10-21 - Phạm vi quyền trong `permissions.yaml` đã được chủ duyệt.
+- 2026-10-21 - Nơi bàn giao: Google Drive, thư mục "Subagent - Ban giao" (id trong `sources.yaml`).
+
 ## Mẫu vàng (+ lý do được duyệt)
 
 _(chưa có)_
@@ -21,4 +24,3 @@ _(chưa có)_
 
 - Giọng viết, màu sắc, logo, font, bố cục thương hiệu? (cần mẫu đã duyệt)
 - Sản phẩm và khách hàng mục tiêu?
-- Nơi bàn giao ưu tiên (repo, Google Drive, ...)?

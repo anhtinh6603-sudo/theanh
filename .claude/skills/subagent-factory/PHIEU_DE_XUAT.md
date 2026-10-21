@@ -12,8 +12,8 @@ không chia sẻ dữ liệu, không hành động bên ngoài.
 
 ## Bắt buộc
 
-- [ ] Duyệt phạm vi quyền trong `factory/permissions.yaml`
-- [ ] Xác nhận nơi bàn giao kết quả (repo / Google Drive / khác)
+- [x] Duyệt phạm vi quyền trong `factory/permissions.yaml` - chủ duyệt 2026-10-21
+- [x] Nơi bàn giao: Google Drive, thư mục "Subagent - Ban giao" - đã tạo và tải thử thành công
 
 ## Nên có
 

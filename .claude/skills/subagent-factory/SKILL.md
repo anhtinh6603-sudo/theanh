@@ -47,7 +47,10 @@ khác với trí nhớ của bạn, file thắng.
    `max_retry` (mặc định 2) lần mỗi job. Hết giới hạn → báo đúng phần chưa đạt,
    status `failed`. Agent con vượt phạm vi → đặt `status: locked` trong
    registry và báo chủ.
-7. **Bàn giao & lưu** - đưa đường dẫn/kết quả cho chủ, status `done`, ghi một
+7. **Bàn giao & lưu** - tải kết quả + `bao-cao.txt` (mẫu trong quality-gate.md)
+   lên thư mục Drive bàn giao (`delivery` trong `sources.yaml`): tạo thư mục con
+   `<job_id>` rồi tải file vào đó; kiểm lại bằng metadata (kích thước khớp).
+   Gửi link Drive cho chủ, status `done`, ghi một
    dòng vào nhật ký tháng, và chỉ cập nhật `memory/profile.md` với điều đã được
    chủ cung cấp/xác nhận/duyệt.
 
