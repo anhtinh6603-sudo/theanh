@@ -1,0 +1,28 @@
+# Bản đồ quyền - không trao quyền trắng. Agent Tổng chỉ hành động trong phạm vi đã ghi.
+scope:
+  project: anhtinh6603-sudo/theanh   # chỉ repo/workspace này; cấm đọc chéo dự án khác
+  write_paths: [outputs/, inbox/, content-bot-system/data/, content-bot-system/output/, .claude/]
+  branch: theo nhánh phát triển được giao cho phiên
+
+tiers:
+  tu_dong_hoan_toan:   # đầu vào rõ, hoàn tác được, không phát sinh phí, gate đo được
+    - Đọc dữ liệu trong phạm vi
+    - Tạo bản nháp và file mới
+    - Sửa lỗi kỹ thuật có thể hoàn tác
+    - Tự retry trong giới hạn max_retry
+    - Kiểm tra và báo trạng thái
+  tu_dong_co_giam_sat:  # chạy và hiển thị tiến trình; chủ chỉ xem
+    - Chạy pipeline nhiều bước, render dài
+    - Commit + push lên nhánh phát triển được giao
+  xin_duyet:            # PHẢI DỪNG trước bước cuối
+    - Đăng bài, gửi tin, bình luận đại diện
+    - Xuất bản, chia sẻ dữ liệu, cấp/đổi quyền
+    - Mua hàng hoặc bất kỳ việc phát sinh phí (gọi API trả phí số lượng lớn)
+    - Xóa dữ liệu hoặc cam kết bên ngoài
+    - Tạo Pull Request, đổi registry/quality gate
+  chu_thao_tac:         # chỉ chủ làm
+    - Đăng nhập, OTP, CAPTCHA, mật khẩu
+    - Xác minh danh tính, thanh toán
+    - Nhập API key / token vào .env hoặc secret môi trường
+
+khong_luu: [mat_khau, otp, api_key, token, cookie, thanh_toan, du_lieu_rieng_khong_can_thiet]

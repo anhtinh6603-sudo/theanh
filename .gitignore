@@ -25,3 +25,9 @@ public/ffmpeg-core
 *.njsproj
 *.sln
 *.sw?
+
+# Subagent factory: job inputs/outputs stay local
+inbox/*
+outputs/*
+!inbox/.gitkeep
+!outputs/.gitkeep

@@ -1,0 +1,20 @@
+# Kích hoạt - lệnh, lịch, thư mục, sự kiện. Chống gửi trùng bằng job_id + queue.yaml.
+triggers:
+  - type: lenh
+    description: Chủ nói "chạy đi" / "Agent Tổng, làm ..." hoặc chọn một việc đã định nghĩa
+    enabled: true
+  - type: thu_muc
+    description: Có file mới trong inbox/ → phân loại và tạo job khi phiên đang chạy
+    enabled: true
+  - type: lich
+    description: Chạy theo ngày/giờ (scheduled task), chỉ báo khi có thay đổi hoặc cần quyết định
+    enabled: false   # cần chủ duyệt giờ chạy + múi giờ
+  - type: su_kien
+    description: Trạng thái đổi (render xong, đơn mới, bình luận mới, lỗi mới)
+    enabled: false   # cần kết nối nguồn sự kiện
+
+anti_duplicate:
+  - Mỗi đầu vào chỉ sinh một job_id; trước khi tạo job mới kiểm queue.yaml theo nguồn.
+  - Gửi tin/đăng bài chỉ trong khung giờ đã duyệt (mặc định 08:00-22:00 Asia/Ho_Chi_Minh); ngoài giờ chỉ xếp hàng.
+  - Không gửi dồn, trùng, hàng loạt hoặc né chống spam.
+  - Khiếu nại, hoàn tiền, giảm giá, cam kết, dữ liệu nhạy cảm hoặc yêu cầu người thật → chuyển chủ.

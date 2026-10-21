@@ -1,0 +1,16 @@
+# Nguồn việc - thứ tự tìm đầu vào. Mẫu học ≠ dữ liệu sản xuất.
+input_lookup_order:
+  1: Yêu cầu và file vừa nhận trong cuộc trò chuyện (~/.claude/uploads/ hoặc file đính kèm)
+  2: APP / dự án đang mở (repo theanh)
+  3: Registry của khách hàng (factory/registry.yaml, memory/profile.md)
+  4: Thư mục nhận tài nguyên (inbox/)
+  5: Bộ nhớ và mẫu đã duyệt (factory/memory/)
+  6: Hỏi đúng phần vẫn còn thiếu
+
+inbox: inbox/        # thả file mới vào đây để Agent Tổng phân loại
+outputs: outputs/    # mỗi job một thư mục outputs/<job_id>/
+
+rules:
+  - Không dùng tài sản của khách hàng khác.
+  - Không biến suy luận từ một mẫu thành sự thật lâu dài.
+  - Mẫu học chỉ để rút cấu trúc, phong cách, mức chất lượng - không sao chép dữ kiện riêng.
