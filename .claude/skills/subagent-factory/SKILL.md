@@ -83,7 +83,8 @@ Cài/khôi phục (container cloud là tạm thời): `bash .claude/skills/subag
 
 - Xóa nền: `rembg i -m u2net in.png out.png` (model u2net ở `~/.u2net/`)
 - Phụ đề tự động: `/opt/subagent-tools/whisper.cpp/build/bin/whisper-cli -m /opt/subagent-tools/whisper.cpp/models/ggml-medium.bin -l vi -osrt -f audio.wav` (audio 16 kHz mono)
-- Làm nét: Real-ESRGAN - chỉ dùng khi `PHIEU_DE_XUAT.md` ghi đã được chủ cho phép.
+- Làm nét / phóng ảnh x4: `/opt/subagent-tools/realesrgan/realesrgan-ncnn-vulkan -i in.png -o out.png -n realesrgan-x4plus`
+  (chạy CPU qua Vulkan phần mềm - chậm; video thì tách khung bằng ffmpeg, xử lý, ghép lại)
 
 ## Lệnh kiểm tra toàn hệ thống
 

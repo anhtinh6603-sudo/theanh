@@ -23,6 +23,7 @@ Báo về Agent Tổng: trạng thái, lỗi, bằng chứng.
 
 - Phụ đề tự động tiếng Việt bằng whisper.cpp → file .srt → burn bằng ffmpeg.
 - Xóa nền ảnh/logo bằng rembg (`-m u2net`).
+- Làm nét/phóng ảnh bằng Real-ESRGAN (chậm trên CPU - chỉ dùng cho ảnh hoặc clip ngắn).
 - Thiếu công cụ/model → báo Agent Tổng, không thay bằng kết quả giả.
 
 ## Trả về

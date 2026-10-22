@@ -23,7 +23,18 @@ if [ ! -s "$MODEL" ]; then
     || { rm -f "$MODEL"; echo "  ⚠️  không tải được model whisper (huggingface.co bị chặn?)"; }
 fi
 
+echo "== Real-ESRGAN (làm nét) - chủ cho phép 2026-10-22"
+if [ ! -x "$TOOLS/realesrgan/realesrgan-ncnn-vulkan" ]; then
+  DEBIAN_FRONTEND=noninteractive apt-get install -y -q mesa-vulkan-drivers libvulkan1 libgomp1 >/dev/null 2>&1 \
+    || { apt-get update -q >/dev/null 2>&1 && DEBIAN_FRONTEND=noninteractive apt-get install -y -q mesa-vulkan-drivers libvulkan1 libgomp1 >/dev/null 2>&1; }
+  [ -s "$TOOLS/esrgan.zip" ] || curl -sSL -o "$TOOLS/esrgan.zip" \
+    https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip
+  mkdir -p "$TOOLS/realesrgan"
+  python3 -c "import zipfile,sys;zipfile.ZipFile(sys.argv[1]).extractall(sys.argv[2])" "$TOOLS/esrgan.zip" "$TOOLS/realesrgan"
+  chmod +x "$TOOLS/realesrgan/realesrgan-ncnn-vulkan"
+fi
+
 echo "== content-bot-system"
 pip3 install --break-system-packages -q -r "$(git rev-parse --show-toplevel)/content-bot-system/requirements.txt"
 
-echo "Xong. Real-ESRGAN: xem mục 'Nền kỹ thuật' trong PHIEU_DE_XUAT.md (cần chủ cho phép chạy binary)."
+echo "Xong."

@@ -24,6 +24,7 @@ if [ "${avail_kb:-0}" -gt 2097152 ]; then ok "đĩa trống > 2GB"; else warn "�
 echo "== Nền kỹ thuật edit (tùy chọn)"
 command -v rembg >/dev/null 2>&1 && [ -s ~/.u2net/u2net.onnx ] && ok "rembg + u2net" || warn "rembg chưa cài (install_extras.sh)"
 [ -x /opt/subagent-tools/whisper.cpp/build/bin/whisper-cli ] && ok "whisper.cpp" || warn "whisper.cpp chưa build (install_extras.sh)"
+[ -x /opt/subagent-tools/realesrgan/realesrgan-ncnn-vulkan ] && ok "Real-ESRGAN" || warn "Real-ESRGAN chưa cài (install_extras.sh)"
 ls /opt/subagent-tools/whisper.cpp/models/ggml-*.bin >/dev/null 2>&1 && ok "model whisper" || warn "thiếu model whisper (cần mạng tới huggingface.co)"
 
 echo "== Thành phần công xưởng"

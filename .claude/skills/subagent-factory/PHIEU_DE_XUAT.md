@@ -18,5 +18,5 @@ Cập nhật 2026-10-22. Chủ đã duyệt toàn bộ ("cài hết").
 - [x] Agent `cham-soc-khach` - đã tạo, chỉ soạn nháp; **chờ chủ kết nối kênh** Facebook/Zalo
 - [x] rembg (xóa nền) - cài và chạy thử đạt
 - [~] Whisper.cpp - đã build; **model bị chặn** vì mạng môi trường chưa cho phép `huggingface.co`
-- [ ] Real-ESRGAN - đã tải bản Linux từ GitHub chính thức (xinntao/Real-ESRGAN), **chờ chủ cho phép chạy** file thực thi tải về + cài driver Vulkan phần mềm
+- [x] Real-ESRGAN - chủ cho phép 2026-10-22; chạy thử 320x240 → 1280x960 đạt
 - [~] Kích hoạt theo sự kiện - file mới trên Drive bắt qua lịch sáng; đơn/bình luận cần kết nối kênh
