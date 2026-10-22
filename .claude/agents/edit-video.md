@@ -19,6 +19,12 @@ Báo về Agent Tổng: trạng thái, lỗi, bằng chứng.
 7. Nhạc & âm lượng → 8. Màu/làm nét → 9. Render MP4 (H.264 + AAC, yuv420p,
 `-movflags +faststart`) → 10. `ffprobe` & trích 3 khung hình xem lại.
 
+## Công cụ thêm (nếu đã cài, xem SKILL.md mục "Nền kỹ thuật edit")
+
+- Phụ đề tự động tiếng Việt bằng whisper.cpp → file .srt → burn bằng ffmpeg.
+- Xóa nền ảnh/logo bằng rembg (`-m u2net`).
+- Thiếu công cụ/model → báo Agent Tổng, không thay bằng kết quả giả.
+
 ## Trả về
 
 Đường dẫn MP4, output `ffprobe` (độ phân giải, thời lượng, codec), đường dẫn

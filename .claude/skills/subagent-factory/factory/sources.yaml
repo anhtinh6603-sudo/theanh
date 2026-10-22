@@ -7,7 +7,12 @@ input_lookup_order:
   5: Bộ nhớ và mẫu đã duyệt (factory/memory/)
   6: Hỏi đúng phần vẫn còn thiếu
 
-inbox: inbox/        # thả file mới vào đây để Agent Tổng phân loại
+inbox: inbox/        # thả file mới vào đây để Agent Tổng phân loại (trong phiên)
+drive_inbox:         # hộp nhận việc trên Drive - lịch sáng tự kiểm
+  folder_name: "Subagent - Nhan viec"
+  folder_id: 1s3sbjqoS7FDj5cbHJsh5oxGXD3HQzuS5
+  url: https://drive.google.com/drive/folders/1s3sbjqoS7FDj5cbHJsh5oxGXD3HQzuS5
+  rule: mỗi việc = file + brief (ghi chú yêu cầu) cùng thư mục con; không có brief thì hỏi chủ
 outputs: outputs/    # mỗi job một thư mục outputs/<job_id>/ (bản nháp cục bộ)
 
 delivery:            # nơi bàn giao chính thức - chủ duyệt 2026-10-21

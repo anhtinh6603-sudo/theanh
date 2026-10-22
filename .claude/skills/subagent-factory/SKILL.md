@@ -77,6 +77,14 @@ Tuyệt đối không lưu hay hiển thị mật khẩu, OTP, API key, token, c
 liệu nhạy cảm - kể cả trong nhật ký, bộ nhớ, commit. Dùng biến môi trường
 (`.env` đã bị git bỏ qua hoặc secret của môi trường) và che giá trị khi in log.
 
+## Nền kỹ thuật edit
+
+Cài/khôi phục (container cloud là tạm thời): `bash .claude/skills/subagent-factory/scripts/install_extras.sh`
+
+- Xóa nền: `rembg i -m u2net in.png out.png` (model u2net ở `~/.u2net/`)
+- Phụ đề tự động: `/opt/subagent-tools/whisper.cpp/build/bin/whisper-cli -m /opt/subagent-tools/whisper.cpp/models/ggml-medium.bin -l vi -osrt -f audio.wav` (audio 16 kHz mono)
+- Làm nét: Real-ESRGAN - chỉ dùng khi `PHIEU_DE_XUAT.md` ghi đã được chủ cho phép.
+
 ## Lệnh kiểm tra toàn hệ thống
 
 ```bash

@@ -1,7 +1,7 @@
 # Registry Agent - nguồn sự thật duy nhất về Agent con.
 # status: proposed (chờ chủ duyệt) | active | locked (vượt phạm vi, đã khóa) | retired
-version: 1
-updated: 2026-10-21
+version: 2
+updated: 2026-10-22
 max_retry: 2
 
 agents:
@@ -24,8 +24,9 @@ agents:
     status: active
 
   - id: cham-soc-khach
-    agent_type: null
-    file: null
-    capability: Nhắn tin chăm sóc khách 08:00-22:00, chống gửi trùng/spam
+    agent_type: cham-soc-khach
+    file: .claude/agents/cham-soc-khach.md
+    capability: Soạn trả lời khách 08:00-22:00, chống gửi trùng/spam; gửi thật phải xin duyệt
     permission_tier: xin_duyet
-    status: proposed   # cần chủ duyệt + kết nối tài khoản trước khi tạo
+    status: active     # chủ duyệt 2026-10-22; chỉ soạn nháp cho tới khi chủ kết nối kênh nhắn tin
+    blocked_by: chủ kết nối kênh (Facebook/Zalo) + điền memory/brand.md

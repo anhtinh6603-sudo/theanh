@@ -8,10 +8,13 @@ triggers:
     enabled: true
   - type: lich
     description: Chạy theo ngày/giờ (scheduled task), chỉ báo khi có thay đổi hoặc cần quyết định
-    enabled: false   # cần chủ duyệt giờ chạy + múi giờ
+    enabled: true    # chủ duyệt 2026-10-22
+    schedule: "07:37 hằng ngày, Asia/Ho_Chi_Minh"
+    scheduled_task_id: trig_018hNZHR2prA7U1XeWzGJn9h   # "Subagent kiem tra sang"
+    does: cài lại công cụ nếu container mới, check_factory, quét Drive "Subagent - Nhan viec"
   - type: su_kien
     description: Trạng thái đổi (render xong, đơn mới, bình luận mới, lỗi mới)
-    enabled: false   # cần kết nối nguồn sự kiện
+    enabled: partial # file mới trong Drive "Subagent - Nhan viec" bắt qua lịch sáng; đơn/bình luận cần chủ kết nối kênh
 
 anti_duplicate:
   - Mỗi đầu vào chỉ sinh một job_id; trước khi tạo job mới kiểm queue.yaml theo nguồn.

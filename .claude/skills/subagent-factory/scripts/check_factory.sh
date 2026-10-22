@@ -21,8 +21,13 @@ fi
 avail_kb=$(df -Pk "$ROOT" | awk 'NR==2{print $4}')
 if [ "${avail_kb:-0}" -gt 2097152 ]; then ok "đĩa trống > 2GB"; else warn "đĩa trống thấp"; fi
 
+echo "== Nền kỹ thuật edit (tùy chọn)"
+command -v rembg >/dev/null 2>&1 && [ -s ~/.u2net/u2net.onnx ] && ok "rembg + u2net" || warn "rembg chưa cài (install_extras.sh)"
+[ -x /opt/subagent-tools/whisper.cpp/build/bin/whisper-cli ] && ok "whisper.cpp" || warn "whisper.cpp chưa build (install_extras.sh)"
+ls /opt/subagent-tools/whisper.cpp/models/ggml-*.bin >/dev/null 2>&1 && ok "model whisper" || warn "thiếu model whisper (cần mạng tới huggingface.co)"
+
 echo "== Thành phần công xưởng"
-for f in registry.yaml permissions.yaml sources.yaml queue.yaml triggers.yaml quality-gate.md memory/profile.md; do
+for f in registry.yaml permissions.yaml sources.yaml queue.yaml triggers.yaml quality-gate.md memory/profile.md memory/brand.md; do
   if [ -f "$FACTORY/$f" ]; then ok "$f"; else bad "$f thiếu"; fi
 done
 

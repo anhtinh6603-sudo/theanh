@@ -1,28 +1,22 @@
-# Phiếu đề xuất đầu tiên - Công xưởng Subagent v1
+# Phiếu đề xuất - Công xưởng Subagent
 
-Chủ duyệt từng mục (✅ / ❌). Chưa duyệt thì không phát sinh phí, không đăng nhập,
-không chia sẻ dữ liệu, không hành động bên ngoài.
+Cập nhật 2026-10-22. Chủ đã duyệt toàn bộ ("cài hết").
 
-## Đã cài (trong phạm vi tự làm, hoàn tác bằng git)
+## Bắt buộc - XONG
 
-- Agent Tổng: `.claude/skills/subagent-factory/SKILL.md` (quy trình 7 bước)
-- 8 thành phần trong `factory/`; lệnh kiểm tra `scripts/check_factory.sh` → SẴN SÀNG
-- Agent con active: `edit-video`, `content-bot` (`.claude/agents/`)
-- Thư mục `inbox/` (nhận việc) và `outputs/` (bàn giao), không đưa lên git
-
-## Bắt buộc
-
-- [x] Duyệt phạm vi quyền trong `factory/permissions.yaml` - chủ duyệt 2026-10-21
-- [x] Nơi bàn giao: Google Drive, thư mục "Subagent - Ban giao" - đã tạo và tải thử thành công
+- [x] Phạm vi quyền `factory/permissions.yaml` - duyệt 2026-10-21
+- [x] Bàn giao: Google Drive "Subagent - Ban giao"
 
 ## Nên có
 
-- [ ] Hồ sơ thương hiệu: giọng viết, màu, logo, font + 1-3 mẫu vàng đã duyệt
-- [ ] Bật trigger "lịch" (scheduled task) - chủ chọn giờ chạy, múi giờ Asia/Ho_Chi_Minh
-- [ ] API key cho content-bot (Anthropic/OpenAI) - chủ tự nhập vào secret môi trường
+- [x] Mẫu hồ sơ thương hiệu `factory/memory/brand.md` - **chờ chủ điền/gửi mẫu**
+- [x] Lịch sáng 07:37 (Asia/Ho_Chi_Minh): cài lại công cụ, kiểm hệ thống, quét Drive "Subagent - Nhan viec"
+- [ ] API key cho content-bot - **chủ tự thêm** vào cài đặt môi trường (biến `ANTHROPIC_API_KEY` hoặc `OPENAI_API_KEY`). Thư viện của content-bot đã cài.
 
 ## Tùy chọn
 
-- [ ] Agent `cham-soc-khach` (Facebook/Zalo) - cần chủ đăng nhập, khung 08:00-22:00
-- [ ] Nền kỹ thuật edit nâng cao: Whisper.cpp (phụ đề tự động), Real-ESRGAN, rembg
-- [ ] Trigger "sự kiện" (đơn mới, bình luận mới) - cần kết nối nguồn sự kiện
+- [x] Agent `cham-soc-khach` - đã tạo, chỉ soạn nháp; **chờ chủ kết nối kênh** Facebook/Zalo
+- [x] rembg (xóa nền) - cài và chạy thử đạt
+- [~] Whisper.cpp - đã build; **model bị chặn** vì mạng môi trường chưa cho phép `huggingface.co`
+- [ ] Real-ESRGAN - đã tải bản Linux từ GitHub chính thức (xinntao/Real-ESRGAN), **chờ chủ cho phép chạy** file thực thi tải về + cài driver Vulkan phần mềm
+- [~] Kích hoạt theo sự kiện - file mới trên Drive bắt qua lịch sáng; đơn/bình luận cần kết nối kênh
