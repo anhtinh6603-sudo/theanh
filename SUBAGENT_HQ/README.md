@@ -9,12 +9,25 @@ qua đăng ký (ai được làm gì), kiểm quyền (4 tầng) và quality gat
 chí) trước khi coi là "xong". Việc thực thi thật vẫn do Claude gọi đúng
 Skill/Agent tool khi được giao.
 
-## Cập nhật registry cho đúng 20 agent thật của bạn
+## Đội agent hiện tại
 
-`config/registry.json` hiện là bản khởi điểm dựng từ các skill có sẵn trong
-phiên làm việc này. Sửa lại để khớp đúng đội quân thật: xoá/thêm agent, đổi
-`actions` (phải khớp tên trong `config/permissions.json` → `action_tiers`),
-đổi `status` thành `"draft"` cho agent chưa sẵn sàng.
+`config/registry.json` có đúng 20 agent, chọn từ các Claude Skill thật đang
+có trong tài khoản (research, content, thiết kế, video, CSKH, quảng cáo/hạ
+tầng). Nếu đội quân thật của bạn khác, sửa lại `name`/`capability`/`actions`
+trực tiếp trong file, hoặc dùng lệnh dưới để thêm/mở agent đúng quy trình.
+
+## Thêm agent mới — luôn qua draft trước
+
+```bash
+# Thêm — luôn tạo ở status=draft, KHÔNG nhận job ngay
+python3 hq.py add-agent "<ten_agent>" "<nhom>" "<nang_luc>" "draft,post"
+
+# Test ổn rồi mới cho chạy thật
+python3 hq.py activate <ten_agent>
+```
+
+Không sửa tay `"status"` trong `registry.json` để bỏ qua bước test — luôn
+đi qua `add-agent` → `activate`.
 
 ## Vòng đời 1 job
 
@@ -52,6 +65,7 @@ python3 hq.py done <job_id>
 
 ```bash
 python3 hq.py lock <agent_name>   # khóa 1 agent, nó không nhận job mới nữa
+python3 hq.py activate <agent_name>  # mở lại agent (draft hoặc locked) -> active
 python3 hq.py stop                # DỪNG KHẨN toàn bộ — xoá SUBAGENT_HQ/jobs/HALT để mở lại
 ```
 

@@ -98,24 +98,6 @@
       "status": "active"
     },
     {
-      "name": "thuong-hieu-ca-nhan",
-      "group": "Thiết kế",
-      "capability": "Bộ ảnh thương hiệu cá nhân đồng nhất, chèn tiêu đề/badge",
-      "actions": [
-        "generate_image"
-      ],
-      "status": "active"
-    },
-    {
-      "name": "hoan-doi-nhan-vat-thuong-hieu",
-      "group": "Thiết kế",
-      "capability": "Hoán đổi nhân vật trong ảnh theo mặt/trang phục thương hiệu cố định",
-      "actions": [
-        "generate_image"
-      ],
-      "status": "active"
-    },
-    {
       "name": "geminigen-image",
       "group": "Thiết kế",
       "capability": "Tạo ảnh AI qua GeminiGen API",
@@ -135,18 +117,9 @@
       "status": "active"
     },
     {
-      "name": "huong-dan-edit-video-bang-ai",
-      "group": "Video",
-      "capability": "Dựng/chỉnh sửa video, phụ đề, cắt khoảng lặng, dựng theo transcript",
-      "actions": [
-        "render"
-      ],
-      "status": "active"
-    },
-    {
       "name": "video-editing",
       "group": "Video",
-      "capability": "Cắt/ghép/convert/nén video bằng ffmpeg",
+      "capability": "Cắt/ghép/convert/nén video, phụ đề, tách âm thanh bằng ffmpeg",
       "actions": [
         "render"
       ],
@@ -163,41 +136,11 @@
       "status": "active"
     },
     {
-      "name": "videoviral",
-      "group": "Video",
-      "capability": "Video dọc viral tin tức/review từ ý tưởng hoặc URL, xuất MP4",
-      "actions": [
-        "generate_video",
-        "render",
-        "publish"
-      ],
-      "status": "active"
-    },
-    {
-      "name": "vietnamese-tts-video",
-      "group": "Video",
-      "capability": "Video giọng đọc + phụ đề tiếng Việt từ ảnh, công cụ miễn phí",
-      "actions": [
-        "generate_video",
-        "render"
-      ],
-      "status": "active"
-    },
-    {
       "name": "video-vairo-thu",
       "group": "Video",
       "capability": "Video hài kịch nhân vật thú nhân hóa, Flow + ElevenLabs + FFmpeg QC",
       "actions": [
         "generate_video",
-        "render"
-      ],
-      "status": "active"
-    },
-    {
-      "name": "edit-captioned-vertical-video",
-      "group": "Video",
-      "capability": "Dựng video dọc có phụ đề từ footage có sẵn",
-      "actions": [
         "render"
       ],
       "status": "active"
@@ -232,7 +175,7 @@
     },
     {
       "name": "xay-chay-quang-cao-tu-dong",
-      "group": "Quảng cáo",
+      "group": "Quảng cáo & Hạ tầng",
       "capability": "Tính CPA/ROAS, cấu trúc test-scale, mẫu quảng cáo, báo cáo hằng ngày",
       "actions": [
         "draft",
@@ -243,7 +186,7 @@
     },
     {
       "name": "xay-trang-ban-hang-tu-dong",
-      "group": "Hạ tầng bán hàng",
+      "group": "Quảng cáo & Hạ tầng",
       "capability": "Landing page, form đặt hàng, thanh toán, luồng sau đơn",
       "actions": [
         "publish"
@@ -252,30 +195,12 @@
     },
     {
       "name": "xay-website-tu-dong",
-      "group": "Hạ tầng bán hàng",
+      "group": "Quảng cáo & Hạ tầng",
       "capability": "Website nhiều trang, SEO cơ bản, form liên hệ, blog có duyệt",
       "actions": [
         "publish"
       ],
       "status": "active"
-    },
-    {
-      "name": "xay-quy-trinh-email-tu-dong",
-      "group": "Hạ tầng bán hàng",
-      "capability": "Chuỗi email tự động: chào mừng, nuôi dưỡng, giỏ hàng bỏ quên",
-      "actions": [
-        "send_message"
-      ],
-      "status": "draft"
-    },
-    {
-      "name": "xay-app-phan-mem-tu-dong",
-      "group": "Kỹ thuật",
-      "capability": "App/công cụ nội bộ: quản lý đơn, khách, kho, chấm công",
-      "actions": [
-        "render"
-      ],
-      "status": "draft"
     }
   ]
 }

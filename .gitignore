@@ -34,3 +34,4 @@ SUBAGENT_HQ/jobs/jobs.json
 SUBAGENT_HQ/jobs/HALT
 SUBAGENT_HQ/logs/*.jsonl
 SUBAGENT_HQ/memory/profile.json
+__pycache__/

@@ -267,6 +267,46 @@ def cmd_status(args) -> int:
     return 0
 
 
+def cmd_add_agent(args) -> int:
+    registry = load_registry()
+    if find_agent(registry, args.name) is not None:
+        print(f"Agent '{args.name}' đã tồn tại trong registry — dùng 'activate' nếu muốn mở lại.")
+        return 1
+    actions = [a.strip() for a in args.actions.split(",") if a.strip()]
+    registry.setdefault("agents", []).append({
+        "name": args.name,
+        "group": args.group,
+        "capability": args.capability,
+        "actions": actions,
+        "status": "draft",
+    })
+    save_json(CONFIG / "registry.json", registry)
+    log("add_agent", agent=args.name, status="draft")
+    print(
+        f"Đã thêm agent '{args.name}' với status=draft. "
+        f"Agent draft KHÔNG nhận job mới (hq.py new sẽ chặn). "
+        f"Test ổn rồi chạy 'hq.py activate {args.name}' mới cho chạy thật."
+    )
+    return 0
+
+
+def cmd_activate(args) -> int:
+    registry = load_registry()
+    agent = find_agent(registry, args.agent)
+    if agent is None:
+        print(f"Không tìm thấy agent '{args.agent}'")
+        return 1
+    if agent.get("status") == "active":
+        print(f"Agent '{args.agent}' đã active.")
+        return 0
+    prev = agent.get("status")
+    agent["status"] = "active"
+    save_json(CONFIG / "registry.json", registry)
+    log("activate", agent=args.agent, prev_status=prev)
+    print(f"Agent '{args.agent}' chuyển {prev} -> active. Đảm bảo đã test (snapshot/selftest) trước khi làm việc này.")
+    return 0
+
+
 def cmd_lock(args) -> int:
     registry = load_registry()
     agent = find_agent(registry, args.agent)
@@ -326,6 +366,17 @@ def main() -> int:
     p = sub.add_parser("status")
     p.add_argument("job_id", nargs="?")
     p.set_defaults(func=cmd_status)
+
+    p = sub.add_parser("add-agent")
+    p.add_argument("name")
+    p.add_argument("group")
+    p.add_argument("capability")
+    p.add_argument("actions", help="Danh sách hành động, phân tách bởi dấu phẩy, vd: draft,post")
+    p.set_defaults(func=cmd_add_agent)
+
+    p = sub.add_parser("activate")
+    p.add_argument("agent")
+    p.set_defaults(func=cmd_activate)
 
     p = sub.add_parser("lock")
     p.add_argument("agent")
