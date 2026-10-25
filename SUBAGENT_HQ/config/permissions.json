@@ -1,0 +1,25 @@
+{
+  "tiers": {
+    "1": "Tự động hoàn toàn — đầu vào rõ, hoàn tác được, không tốn phí, gate đo được",
+    "2": "Tự động có giám sát — chạy và hiện tiến trình cho chủ xem",
+    "3": "Xin duyệt trước bước cuối — đăng bài, gửi tin, xuất bản, chia sẻ, trả phí, đổi quyền",
+    "4": "Chủ trực tiếp thao tác — đăng nhập, OTP, CAPTCHA, mật khẩu, thanh toán"
+  },
+  "action_tiers": {
+    "research": 1,
+    "draft": 1,
+    "report": 1,
+    "generate_image": 2,
+    "generate_video": 2,
+    "render": 2,
+    "post": 3,
+    "publish": 3,
+    "send_message": 3,
+    "pay": 3,
+    "change_permission": 3,
+    "login": 4,
+    "otp": 4,
+    "payment_input": 4
+  },
+  "note": "Mỗi agent trong registry.json khai 'actions' là tập hành động nó được phép xin làm. Tier của 1 job = tier cao nhất trong các action được yêu cầu cho job đó. Tier 4 không bao giờ giao cho agent — hq.py sẽ luôn dừng (exit 3) và chuyển chủ."
+}

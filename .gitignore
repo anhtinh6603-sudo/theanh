@@ -25,3 +25,12 @@ public/ffmpeg-core
 *.njsproj
 *.sln
 *.sw?
+
+# SUBAGENT_HQ runtime state (không commit trạng thái job/log chạy thật)
+# (mở lại thư mục logs/ vì rule "logs" ở trên chặn mọi thư mục tên "logs")
+!SUBAGENT_HQ/logs/
+!SUBAGENT_HQ/logs/.gitkeep
+SUBAGENT_HQ/jobs/jobs.json
+SUBAGENT_HQ/jobs/HALT
+SUBAGENT_HQ/logs/*.jsonl
+SUBAGENT_HQ/memory/profile.json

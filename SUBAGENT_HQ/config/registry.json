@@ -1,0 +1,281 @@
+{
+  "coordinators": [
+    {
+      "name": "dau-nao-subagent",
+      "role": "Đầu não — nhận việc, kiểm quyền, giao agent con, quality gate, bàn giao"
+    },
+    {
+      "name": "doi-agent-tong-chi-huy",
+      "role": "Tổng chỉ huy — chia mục tiêu kinh doanh thành việc nhỏ cho các agent chuyên môn"
+    }
+  ],
+  "agents": [
+    {
+      "name": "content-research-ideas",
+      "group": "Nghiên cứu",
+      "capability": "Tìm trend, phân tích đối thủ, lên ý tưởng nội dung",
+      "actions": [
+        "research"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "ai-nghien-cuu-thi-truong",
+      "group": "Nghiên cứu",
+      "capability": "Nghiên cứu thị trường, đối thủ, khách hàng mục tiêu",
+      "actions": [
+        "research"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "huong-dan-y-tuong-nghien-cuu-viet-content",
+      "group": "Nghiên cứu",
+      "capability": "Nỗi đau khách hàng, trụ cột nội dung, lịch 30 ngày",
+      "actions": [
+        "research",
+        "draft"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "ai-bao-cao-kinh-doanh",
+      "group": "Nghiên cứu",
+      "capability": "Tổng hợp báo cáo doanh thu, CPA/ROAS, đề xuất tối ưu",
+      "actions": [
+        "research",
+        "report"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "facebook-content-phong-menly",
+      "group": "Nội dung",
+      "capability": "Viết bài/carousel/video cho fanpage Phong Menly, xin duyệt trước khi đăng",
+      "actions": [
+        "draft",
+        "post"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "facebook-comment-natural-reply",
+      "group": "Nội dung",
+      "capability": "Trả lời hàng loạt comment tự nhiên trên fanpage",
+      "actions": [
+        "draft",
+        "send_message"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "youtube-video-full-seo",
+      "group": "Nội dung",
+      "capability": "SEO video YouTube: tiêu đề, thẻ, mô tả, màn hình kết thúc",
+      "actions": [
+        "draft",
+        "publish"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "social-photo-content-publisher",
+      "group": "Nội dung",
+      "capability": "Bài ảnh/carousel từ ảnh thật, caption, nhạc, đăng/lên lịch TikTok+FB",
+      "actions": [
+        "draft",
+        "post"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "ai-thiet-ke-quang-cao",
+      "group": "Thiết kế",
+      "capability": "Thiết kế ảnh quảng cáo, poster, thumbnail, banner",
+      "actions": [
+        "generate_image"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "thuong-hieu-ca-nhan",
+      "group": "Thiết kế",
+      "capability": "Bộ ảnh thương hiệu cá nhân đồng nhất, chèn tiêu đề/badge",
+      "actions": [
+        "generate_image"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "hoan-doi-nhan-vat-thuong-hieu",
+      "group": "Thiết kế",
+      "capability": "Hoán đổi nhân vật trong ảnh theo mặt/trang phục thương hiệu cố định",
+      "actions": [
+        "generate_image"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "geminigen-image",
+      "group": "Thiết kế",
+      "capability": "Tạo ảnh AI qua GeminiGen API",
+      "actions": [
+        "generate_image"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "huong-dan-lam-video-bang-ai",
+      "group": "Video",
+      "capability": "Kịch bản, hook, shot list, prompt tạo video AI",
+      "actions": [
+        "draft",
+        "generate_video"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "huong-dan-edit-video-bang-ai",
+      "group": "Video",
+      "capability": "Dựng/chỉnh sửa video, phụ đề, cắt khoảng lặng, dựng theo transcript",
+      "actions": [
+        "render"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "video-editing",
+      "group": "Video",
+      "capability": "Cắt/ghép/convert/nén video bằng ffmpeg",
+      "actions": [
+        "render"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "flow-tvc-director",
+      "group": "Video",
+      "capability": "Điều khiển Google Flow dựng TVC từ avatar/nhân vật cố định",
+      "actions": [
+        "generate_video",
+        "render"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "videoviral",
+      "group": "Video",
+      "capability": "Video dọc viral tin tức/review từ ý tưởng hoặc URL, xuất MP4",
+      "actions": [
+        "generate_video",
+        "render",
+        "publish"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "vietnamese-tts-video",
+      "group": "Video",
+      "capability": "Video giọng đọc + phụ đề tiếng Việt từ ảnh, công cụ miễn phí",
+      "actions": [
+        "generate_video",
+        "render"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "video-vairo-thu",
+      "group": "Video",
+      "capability": "Video hài kịch nhân vật thú nhân hóa, Flow + ElevenLabs + FFmpeg QC",
+      "actions": [
+        "generate_video",
+        "render"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "edit-captioned-vertical-video",
+      "group": "Video",
+      "capability": "Dựng video dọc có phụ đề từ footage có sẵn",
+      "actions": [
+        "render"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "xay-fanpage-chatbot-tu-dong",
+      "group": "CSKH",
+      "capability": "Chatbot Messenger: kịch bản, thu số điện thoại, chốt đơn, chuyển người thật",
+      "actions": [
+        "send_message"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "zalo-tra-loi-khach",
+      "group": "CSKH",
+      "capability": "Soạn tin trả lời khách trên Zalo theo đúng giọng chủ tài khoản",
+      "actions": [
+        "draft",
+        "send_message"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "xay-zalo-cham-soc-khach-tu-dong",
+      "group": "CSKH",
+      "capability": "Quy trình CSKH Zalo theo từng giai đoạn, gắn nhãn, tần suất/dừng",
+      "actions": [
+        "send_message"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "xay-chay-quang-cao-tu-dong",
+      "group": "Quảng cáo",
+      "capability": "Tính CPA/ROAS, cấu trúc test-scale, mẫu quảng cáo, báo cáo hằng ngày",
+      "actions": [
+        "draft",
+        "pay",
+        "publish"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "xay-trang-ban-hang-tu-dong",
+      "group": "Hạ tầng bán hàng",
+      "capability": "Landing page, form đặt hàng, thanh toán, luồng sau đơn",
+      "actions": [
+        "publish"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "xay-website-tu-dong",
+      "group": "Hạ tầng bán hàng",
+      "capability": "Website nhiều trang, SEO cơ bản, form liên hệ, blog có duyệt",
+      "actions": [
+        "publish"
+      ],
+      "status": "active"
+    },
+    {
+      "name": "xay-quy-trinh-email-tu-dong",
+      "group": "Hạ tầng bán hàng",
+      "capability": "Chuỗi email tự động: chào mừng, nuôi dưỡng, giỏ hàng bỏ quên",
+      "actions": [
+        "send_message"
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "xay-app-phan-mem-tu-dong",
+      "group": "Kỹ thuật",
+      "capability": "App/công cụ nội bộ: quản lý đơn, khách, kho, chấm công",
+      "actions": [
+        "render"
+      ],
+      "status": "draft"
+    }
+  ]
+}
