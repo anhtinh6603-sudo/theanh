@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Photo Content Publisher"
+  short_description: "Tạo và đăng bài ảnh đa nền tảng tự nhiên"
+  default_prompt: "Use $social-photo-content-publisher to analyze my channel and prepare a complete photo post."

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Video MMTD"
+  short_description: "Dựng video viral cho sách Mật Mã Tự Do"
+  brand_color: "#E6B93F"
+  default_prompt: "Use $video-mmtd to create a finished vertical video for Mật Mã Tự Do from my script and media."
+policy:
+  allow_implicit_invocation: true

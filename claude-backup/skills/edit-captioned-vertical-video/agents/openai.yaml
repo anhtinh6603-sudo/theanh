@@ -1,0 +1,4 @@
+interface:
+  display_name: "Edit Captioned Vertical Video"
+  short_description: "Render vertical videos with text, music, and logos"
+  default_prompt: "Edit my footage into a polished captioned vertical video."

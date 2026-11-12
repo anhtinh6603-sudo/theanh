@@ -1,0 +1,12 @@
+{
+  "preset": "fb_post",
+  "background": { "color": "#0B3D91", "gradient_to": "#1E88E5", "overlay": 0 },
+  "badge": "ƯU ĐÃI THÁNG 10",
+  "title": "Nghỉ dưỡng trọn vẹn cuối tuần",
+  "subtitle": "Phòng đôi view biển, tặng bữa sáng cho 2 người",
+  "cta": "Nhắn tin đặt phòng",
+  "footer": "Hotline: 0900 000 000  |  Địa chỉ của bạn",
+  "colors": { "text": "#FFFFFF", "accent": "#FACC15", "accent_text": "#111827", "cta_bg": "#EF4444", "cta_text": "#FFFFFF" },
+  "align": "left",
+  "out": "banner-mau.png"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flow TVC Director"
+  short_description: "Tự mở Flow và dựng TVC điện ảnh 10 giây"
+  default_prompt: "Use $flow-tvc-director để mở Flow, dùng project và tài sản đã cấu hình, tạo TVC Omni 10 giây, kiểm tra toàn bộ đầu ra rồi bật cho tôi xem. Nếu đây là lần đầu, hãy hướng dẫn tôi cấu hình project và alias tài sản."

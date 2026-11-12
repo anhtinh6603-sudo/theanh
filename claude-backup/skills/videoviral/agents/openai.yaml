@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Viral"
+  short_description: "Video thật, chữ Việt chuẩn, phong cách Uyên Linh"
+  default_prompt: "Use $videoviral để tạo video dọc từ ý tưởng hoặc URL này bằng ảnh thật, video thật và chữ tiếng Việt không lỗi."

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chuyển Video Tĩnh Thành Động"
+  short_description: "Biến ảnh tĩnh thành video dọc hoàn chỉnh"
+  default_prompt: "Dùng $chuyen-video-tinh-thanh-dong để biến bộ ảnh này thành video dọc có chuyển động và dựng final master."
+
+policy:
+  allow_implicit_invocation: true

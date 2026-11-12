@@ -1,0 +1,4 @@
+interface:
+  display_name: "Facebook Content Phong Menly"
+  short_description: "Viết và lên lịch nội dung Facebook tự nhiên"
+  default_prompt: "Use $facebook-content-phong-menly to create a Facebook post from my idea."

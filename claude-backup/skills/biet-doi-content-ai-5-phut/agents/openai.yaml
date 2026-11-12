@@ -1,0 +1,14 @@
+interface:
+  display_name: Biệt Đội Content AI 5 Phút
+  short_description: Tạo trọn gói content đa nền tảng trong một quy trình.
+  default_prompt: Dùng @biet-doi-content-ai-5-phut để tạo cho tôi một gói content
+    hoàn chỉnh từ ý tưởng đến kiểm duyệt.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thương hiệu cá nhân"
+  short_description: "Tạo bộ ảnh đồng nhất và chèn tiêu đề, badge thương hiệu"
+  default_prompt: "Dùng $thuong-hieu-ca-nhan để tạo hoặc chỉnh bộ ảnh thương hiệu cá nhân."

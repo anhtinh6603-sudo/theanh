@@ -1,0 +1,14 @@
+interface:
+  display_name: Hoán Đổi Nhân Vật Thương Hiệu
+  short_description: Khóa mặt thương hiệu, bám sát ảnh tham chiếu
+  default_prompt: Dùng $hoan-doi-nhan-vat-thuong-hieu để tạo cho cô gái áo vàng một
+    hình ảnh tương tự hình ảnh tham chiếu.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
