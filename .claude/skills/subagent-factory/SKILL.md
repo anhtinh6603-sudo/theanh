@@ -54,6 +54,14 @@ khác với trí nhớ của bạn, file thắng.
    dòng vào nhật ký tháng, và chỉ cập nhật `memory/profile.md` với điều đã được
    chủ cung cấp/xác nhận/duyệt.
 
+## Skill điều phối của Agent Tổng
+
+- `anthropic-skills:dau-nao-subagent` - bản Đầu não gốc, dùng để đối chiếu quy trình.
+- `anthropic-skills:doi-agent-tong-chi-huy` - khi mục tiêu kinh doanh cần chia thành nhiều khâu.
+
+Bảng giao skill: 8 agent con giữ 40 skill tài khoản (xem từng file `.claude/agents/*.md`),
+cộng 2 skill điều phối ở trên = 42 skill. Bản sao lưu skill: `claude-backup/skills/`.
+
 ## Đăng ký Agent mới
 
 Mỗi Agent mới chỉ bổ sung **một** năng lực, kế thừa luật chung, báo cáo về

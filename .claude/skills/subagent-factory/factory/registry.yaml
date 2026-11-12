@@ -1,7 +1,8 @@
 # Registry Agent - nguồn sự thật duy nhất về Agent con.
 # status: proposed (chờ chủ duyệt) | active | locked (vượt phạm vi, đã khóa) | retired
-version: 2
-updated: 2026-10-22
+version: 3
+updated: 2026-11-12
+# skills: skill tài khoản (anthropic-skills:<tên>) giao cho agent; danh sách đầy đủ trong file agent
 max_retry: 2
 
 agents:
@@ -12,6 +13,7 @@ agents:
     inputs: footage + brief trong thư mục nhận việc
     outputs: MP4 trong outputs/<job_id>/
     permission_tier: tu_dong_hoan_toan
+    skills: 5
     status: active
 
   - id: content-bot
@@ -29,4 +31,47 @@ agents:
     capability: Soạn trả lời khách 08:00-22:00, chống gửi trùng/spam; gửi thật phải xin duyệt
     permission_tier: xin_duyet
     status: active     # chủ duyệt 2026-10-22; chỉ soạn nháp cho tới khi chủ kết nối kênh nhắn tin
+    skills: 3
     blocked_by: chủ kết nối kênh (Facebook/Zalo) + điền memory/brand.md
+
+  - id: nghien-cuu-noi-dung
+    agent_type: nghien-cuu-noi-dung
+    file: .claude/agents/nghien-cuu-noi-dung.md
+    capability: Nghiên cứu thị trường, ý tưởng/trend, viết bài và lịch nội dung, đọc PDF
+    permission_tier: tu_dong_hoan_toan
+    skills: 8
+    status: active   # chủ giao 2026-11-12 ("làm xong tất cả")
+
+  - id: video-ai
+    agent_type: video-ai
+    file: .claude/agents/video-ai.md
+    capability: Sản xuất video AI - đạo diễn, Google Flow, TVC, ảnh thành video, giọng đọc
+    permission_tier: tu_dong_co_giam_sat   # credit/phí tạo video phải xin duyệt
+    skills: 9
+    status: active
+    blocked_by: chủ đăng nhập Google Flow / API key GeminiGen, Google TTS khi cần
+
+  - id: thiet-ke-thuong-hieu
+    agent_type: thiet-ke-thuong-hieu
+    file: .claude/agents/thiet-ke-thuong-hieu.md
+    capability: Ảnh quảng cáo, poster, thumbnail, ảnh thương hiệu
+    permission_tier: tu_dong_hoan_toan
+    skills: 5
+    status: active
+
+  - id: phat-hanh-mxh
+    agent_type: phat-hanh-mxh
+    file: .claude/agents/phat-hanh-mxh.md
+    capability: Caption/hashtag/SEO, trả lời bình luận, chuẩn bị đăng TikTok/Facebook/YouTube
+    permission_tier: xin_duyet
+    skills: 3
+    status: active
+    blocked_by: chủ đăng nhập các kênh
+
+  - id: marketing-tu-dong
+    agent_type: marketing-tu-dong
+    file: .claude/agents/marketing-tu-dong.md
+    capability: Quảng cáo, email, landing page, website, app nhỏ, báo cáo kinh doanh
+    permission_tier: tu_dong_co_giam_sat   # chi ngân sách/gửi hàng loạt/xuất bản phải xin duyệt
+    skills: 7
+    status: active

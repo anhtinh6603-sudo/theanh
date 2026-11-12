@@ -58,6 +58,13 @@ for a in data.get("agents", []):
 sys.exit(1 if bad else 0)
 PY
 
+echo "== Skill giao cho agent"
+SK="$ROOT/claude-backup/skills"
+for n in $(grep -ho "anthropic-skills:[a-z0-9-]*" "$ROOT"/.claude/agents/*.md "$ROOT/.claude/skills/subagent-factory/SKILL.md" | sort -u | cut -d: -f2); do
+  [ -d "$SK/$n" ] || bad "skill $n không có trong claude-backup/skills"
+done
+ok "$(grep -ho "anthropic-skills:[a-z0-9-]*" "$ROOT"/.claude/agents/*.md "$ROOT/.claude/skills/subagent-factory/SKILL.md" | sort -u | wc -l) skill đã giao"
+
 echo "== Bí mật"
 if git -C "$ROOT" ls-files | grep -E '(^|/)\.env$' >/dev/null; then bad ".env đang bị git theo dõi"; else ok "không có .env trong git"; fi
 
